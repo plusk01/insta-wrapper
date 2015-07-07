@@ -1,0 +1,7 @@
+module.exports = {
+    site_url: 'https://api.instagram.com/oauth/access_token',
+    username: '',           // instagram username
+    password: '',           // instagram password
+    client_id: '',          // xAuth enabled Client ID from instagram
+    client_secret: ''       // xAuth enabled secret from instagram
+}

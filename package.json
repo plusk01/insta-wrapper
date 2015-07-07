@@ -1,0 +1,30 @@
+{
+  "name": "insta-wrapper",
+  "version": "1.0.0",
+  "description": "An Instagram API Wrapper for Coding Campus to use.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plusk01/insta-wrapper.git"
+  },
+  "keywords": [
+    "instagram",
+    "api",
+    "coding-campus"
+  ],
+  "author": "Parker Lusk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plusk01/insta-wrapper/issues"
+  },
+  "homepage": "https://github.com/plusk01/insta-wrapper",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "q": "^1.4.1",
+    "request": "^2.58.0"
+  }
+}
