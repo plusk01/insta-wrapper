@@ -1,0 +1,22 @@
+{
+  "name": "insta-wrapper",
+  "version": "1.0.0",
+  "homepage": "https://github.com/plusk01/insta-wrapper",
+  "authors": [
+    "Parker Lusk <parkerclusk@gmail.com>"
+  ],
+  "description": "An Instagram API Wrapper for the Coding Campus Intro Course.",
+  "main": "app.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ]
+}

@@ -13,10 +13,11 @@
 // ----------------------------------------------------------------------------
 // Requires
 // ----------------------------------------------------------------------------
-var express   = require('express');
+var express     = require('express');
 var bodyParser  = require('body-parser');
 
-var api    = require('./app/api');
+var api         = require('./app/api');
+var routes      = require('./app/routes');
 
 // ----------------------------------------------------------------------------
 // Configuration
@@ -30,12 +31,13 @@ var port      = process.env.PORT || 8080;   // If no env var set, DEV mode
 app.use(bodyParser.json());   // automagically parses application/json and
                               // exposes it to req.body
 
-
 // ----------------------------------------------------------------------------
 // Routes
 // ----------------------------------------------------------------------------
 
 app.use('/api/v1', api);
+
+app.use('/example', routes.example);
 
 // ----------------------------------------------------------------------------
 // Listen (start app: `node app.js`)
