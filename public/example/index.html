@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>insta-wrapper example</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/lib/prism/themes/prism.css">
+
+    <link rel="stylesheet" type="text/css" href="example.css">
+
+</head>
+<body>
+
+    <h1 class="text-center">Insta-wrapper Example</h1>
+
+    <br><br>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-5">
+<pre>
+<code class="language-javascript">
+
+// when the user presses the 'Go!' button:
+
+function go() {
+  var urn = $('#urn').val();
+
+  var request = $.ajax({
+    url: '/api' + urn,
+    method: 'GET'
+  });
+
+  request.done(function(response) {
+    if (response && response.data && response.data.length) {
+      for (var i=0; i<response.data.length; i++) {
+        var obj = response.data[i];
+        var image = obj.images.standard_resolution;
+      
+        $('<img src="' + image.url + '">').load(function() {
+          $(this).width(300).height(300).appendTo('#images');
+        });
+      }
+    }
+  });
+}
+</code>
+</pre>
+            </div>
+            <div class="col-md-7">
+
+                <div class="action">
+                    <input type="text" id="urn" value="/v1/users/297048867/media/recent" class="form-control">
+                    <button class="btn btn-primary" onclick="go()">Go!</button>
+                </div>
+
+                <hr>
+
+                <div id="images" class="images"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/prism/prism.js"></script>
+
+    <script type="text/javascript">
+
+    function go() {
+        var urn = $('#urn').val();
+        console.log(urn);
+
+        var request = $.ajax({
+            url: '/api' + urn,
+            method: 'GET'
+        });
+
+        request.done(function(response) {
+            if (response && response.data && response.data.length) {
+                for (var i=0; i<response.data.length; i++) {
+                    var obj = response.data[i];
+                    var image = obj.images.standard_resolution;
+
+                    $('<img src="' + image.url + '">').load(function() {
+                        $(this).width(300).height(300).appendTo('#images');
+                    });
+                }
+            }
+        });
+    }
+
+    </script>
+
+</body>
+</html>

@@ -15,9 +15,9 @@
 // ----------------------------------------------------------------------------
 var express     = require('express');
 var bodyParser  = require('body-parser');
+var path        = require('path');
 
 var api         = require('./app/api');
-var routes      = require('./app/routes');
 
 // ----------------------------------------------------------------------------
 // Configuration
@@ -35,9 +35,9 @@ app.use(bodyParser.json());   // automagically parses application/json and
 // Routes
 // ----------------------------------------------------------------------------
 
-app.use('/api/v1', api);
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/example', routes.example);
+app.use('/api/v1', api);
 
 // ----------------------------------------------------------------------------
 // Listen (start app: `node app.js`)
