@@ -7,7 +7,7 @@ var ig      = require('../config/instagram');
 // across requests. We only need 1 API access token from
 // Instagram, so we can use the same one since the user is
 // to specify their user ID.
-var _accessToken = '297048867.0a344b6.e7c0bb354e5b4699a43f11f854832985';
+var _accessToken = null;
 
 // ----------------------------------------------------------
 // Public Methods
@@ -28,11 +28,8 @@ var instagram = {
       function(err, httpResponse, body) {
         if (err) return deferred.reject(err);
 
-        console.log(JSON.stringify(httpResponse).headers);
-
         try {
           var response = JSON.parse(body);
-          console.log(response);
 
           deferred.resolve(response);
         } catch (e) {
